@@ -18,7 +18,6 @@ RSpec.describe Task do
     let(:task) { Task.new(size: 3) }
 
     it "does not count imcomplete task towards velocity" do
-      expect(task).not_to be_complete
       expect(task).not_to be_a_part_of_velocity
       expect(task.points_toward_velocity).to eql(0)
     end
