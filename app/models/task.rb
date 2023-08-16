@@ -1,9 +1,9 @@
 class Task
 
-  attr_accessor :size, :completed
+  attr_accessor :size, :completed_at
 
   def initialize(options = {})
-    @completed = options[:completed]
+    mark_completed(options[:completed_at]) if options[:completed_at]
     @size = options[:size]
   end
 
@@ -12,7 +12,7 @@ class Task
   end
 
   def complete?
-    @completed
+    completed_at.present?
   end
 
   def part_of_velocity?

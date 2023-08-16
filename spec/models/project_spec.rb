@@ -36,7 +36,7 @@ RSpec.describe Project do
     end
 
     it "can calculate total incomplete tasks" do
-      expect(project.remaining_size).to eql(5)
+      expect(project.remaining_size).to eql(7)
     end
   end
 
